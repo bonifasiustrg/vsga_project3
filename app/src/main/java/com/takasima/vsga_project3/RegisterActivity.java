@@ -39,6 +39,12 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+        //menampilkan up button
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     public boolean isValid(){
@@ -52,6 +58,8 @@ public class RegisterActivity extends AppCompatActivity {
         }else{
             return true;
         }
+
+
     }
 
     void simpanFileData(){
@@ -77,6 +85,6 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         Toast.makeText(this, "Registrasi Berhasil!", Toast.LENGTH_SHORT).show();
-        onBackPressed();
+//        onBackPressed();
     }
 }
