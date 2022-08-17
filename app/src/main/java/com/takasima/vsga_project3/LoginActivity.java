@@ -1,5 +1,7 @@
 package com.takasima.vsga_project3;
 
+import static kotlin.io.ConsoleKt.readLine;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -86,6 +88,7 @@ public class LoginActivity extends AppCompatActivity {
             try{
                 BufferedReader br = new BufferedReader(new FileReader(file));
                 String line = br.readLine();
+                readLine();
                 while(line != null){
                     text.append(line);
                     line = br.readLine();

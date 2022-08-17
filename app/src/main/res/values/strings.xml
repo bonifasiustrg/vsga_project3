@@ -17,4 +17,5 @@
     <string name="masukkan_alamat_email">Masukkan alamat email</string>
     <string name="email">Email</string>
     <string name="masukkan_password">Masukkan Password</string>
+    <string name="halaman_logout">Halaman Logout</string>
 </resources>

@@ -85,6 +85,6 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         Toast.makeText(this, "Registrasi Berhasil!", Toast.LENGTH_SHORT).show();
-//        onBackPressed();
+        onBackPressed();
     }
 }

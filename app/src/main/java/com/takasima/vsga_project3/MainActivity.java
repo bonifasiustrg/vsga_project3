@@ -1,9 +1,14 @@
 package com.takasima.vsga_project3;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -119,25 +124,25 @@ public class MainActivity extends AppCompatActivity {
 //    //panggil menu logout
 //    //sebelumnya buat terlebih dahulu resource menu pada folder res
 //    //dengan memilih new android resource file
-//
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.menu, menu);
-//        return true;
-//    }
-//
-//    //action ketika memilih menu logout
-//
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        switch (item.getItemId()){
-//            case R.id.menu_logout:
-//                //pastikan user memang ingin keluar
-//                tampilkanDialogKonfirmasiLogout();
-//                break;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    //action ketika memilih menu logout
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menu_logout:
+                //pastikan user memang ingin keluar
+                tampilkanDialogKonfirmasiLogout();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     //fungsi hapus file
     void hapusFile(){
@@ -147,24 +152,24 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    //fungsi untuk menampilkan kotak dialog logout
-//    void tampilkanDialogKonfirmasiLogout(){
-//        new AlertDialog.Builder(this)
-//                .setTitle("Logout")
-//                .setMessage("Apakah Anda yakin akan logout?")
-//                .setIcon(R.drawable.ic_baseline_warning_24)
-//                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        hapusFile();
-//                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-//                        startActivity(intent);
-//                        finish();
-//                    }
-//                })
-//                .setNegativeButton(android.R.string.no, null)
-//                .show();
-//    }
+    //fungsi untuk menampilkan kotak dialog logout
+    void tampilkanDialogKonfirmasiLogout(){
+        new AlertDialog.Builder(this)
+                .setTitle("Logout")
+                .setMessage("Apakah Anda yakin akan logout?")
+                .setIcon(R.drawable.ic_warning)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        hapusFile();
+                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                })
+                .setNegativeButton(android.R.string.no, null)
+                .show();
+    }
 
 
 }
